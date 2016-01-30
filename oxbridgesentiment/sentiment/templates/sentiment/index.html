@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Twitter Sentiments</title>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="{% static 'sentiment/img/favicons/apple-touch-icon-57x57.png' %}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{% static 'sentiment/img/favicons/apple-touch-icon-60x60.png' %}">
+	<link rel="icon" type="image/png" href="{% static 'sentiment/img/favicons/favicon-32x32.png' %}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{% static 'sentiment/img/favicons/favicon-16x16.png' %}" sizes="16x16">
+	<link rel="manifest" href="{% static 'sentiment/img/favicons/manifest.json' %}">
+	<link rel="shortcut icon" href="{% static 'sentiment/img/favicons/favicon.ico' %}">
+	<meta name="msapplication-TileColor" content="#00a8ff">
+	<meta name="msapplication-config" content="{% static 'sentiment/img/favicons/browserconfig.xml' %}">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Normalize -->
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/normalize.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/style.css' %}">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/bootstrap.css' %}">
+	<!-- Owl -->
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/owl.css' %}">
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/animate.css' %}">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/fonts/font-awesome-4.1.0/css/font-awesome.min.css' %}">
+	<!-- Elegant Icons -->
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/fonts/eleganticons/et-icons.css' %}">
+	<!-- Main style -->
+	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/cardio.css' %}">
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="{% static 'sentiment/img/loader.gif' %}" alt="Preloader image">
+	</div>
+	<nav class="navbar">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="{% static 'sentiment/img/logo.png' %}" data-active-url="{% static 'sentiment/img/logo-active.png' %}" alt=""></a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right main-nav">
+					<li><a href="#data">Data</a></li>
+					<li><a href="#about">About us</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<header id="intro">
+		<div class="container">
+			<div class="table">
+				<div class="header-text">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h3 class="light white">Weekly Twitter Sentiment Trends</h3>
+							<h1 class="white typed">Click Below To Start Searching...</h1>
+							<span class="typed-cursor">|</span>
+						</div>
+					</div>
+					<div class="row">
+						<a href="#data" data-toggle="modal" data-target="#modal1" class="btn btn-white-fill">Click Here!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+		
+
+
+	<section id="data" class="section section-padded">
+		<div class="container" id="data_input">
+				<div class="row title text-center">
+					<div class="input-group" width="100%" id="test">
+							<input class="special_input" placeholder="cat">
+							<span>  vs.  </span>
+							<input class="special_input" placeholder="dog">	
+					</div>
+				</div>
+			<div class="row">
+				<canvas id="myChart" width="100%" height="400">
+					
+				</canvas>
+			</div>
+		</div>
+
+					
+	</section>
+
+	<!-- Holder for mobile navigation -->
+	<div class="mobile-nav">
+		<ul>
+		</ul>
+		<a href="#" class="close-link"><i class="arrow_up"></i></a>
+	</div>
+	<!-- Scripts -->
+	<script src="{% static 'sentiment/js/jquery-1.11.1.min.js' %}"></script>
+	<script src="{% static 'sentiment/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'sentiment/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'sentiment/js/wow.min.js' %}"></script>
+	<script src="{% static 'sentiment/js/typewriter.js' %}"></script>
+	<script src="{% static 'sentiment/js/jquery.onepagenav.js' %}"></script>
+	<script src="{% static 'sentiment/js/main.js' %}"></script>
+	<script src="{% static 'sentiment/chart/chart.js' %}"></script>
+	<script src="{% static 'sentiment/js/script.js' %}"></script>
+</body>
+
+</html>

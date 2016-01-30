@@ -1,0 +1,21 @@
+#data {
+	background-color: #242c43
+}
+
+#data_input {
+	color: #FFFFFF;
+
+}
+
+.special_input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid white;
+    text-align:center;
+}
+
+#test {
+	width: 100%;
+	font-size: 30pt;
+}
