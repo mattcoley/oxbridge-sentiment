@@ -87,9 +87,12 @@
 		<div class="container" id="data_input">
 				<div class="row title text-center">
 					<div class="input-group" width="100%" id="test">
-							<input class="special_input" placeholder="cats">
+							<input class="special_input" placeholder="cats" id="first_input">
 							<span>  vs.  </span>
-							<input class="special_input" placeholder="dogs">	
+							<input class="special_input" placeholder="dogs" id="second_input">	
+							<span class="input-group-btn">
+    							<button class="btn btn-default" type="button" id="query_button">Go!</button>
+  							</span>
 					</div>
 				</div>
 				<br>
@@ -109,22 +112,22 @@
 				<table id="tweet_table">
 					<tr>
 						<td class="best_tweet t_left">
-							Cats are just the best creatures ever #IWANTONE
+							<span id="left_one">Cats are just the best creatures ever #IWANTONE</span>
 							<p class="tweet_author a_left">-thecooldude</p>
 						</td>
 						<td class="best_tweet t_right">
-							@dogperson Ran by a cute dog today! #positivity
+							<span id="right_one">@dogperson Ran by a cute dog today! #positivity</span>
 							<p class="tweet_author a_right">-wonderwoman</p>
 						</td>
 					</tr>
 					<tr>
 						<td class="worst_tweet t_left">
-							@pd Cat just attacked my best friend :/
+							<span id="left_two">@pd Cat just attacked my best friend :/<span>
 							<p class="tweet_author a_left">-concernedcitizen</p>
 
 						</td>
 						<td class="worst_tweet t_right">
-							I wish all the dogs would literally DIE at this moment......
+							<span id="right_two">I wish all the dogs would literally DIE at this moment......</span>
 							<p class="tweet_author a_right t_right">-evilmcphee</p>
 						</td>
 					</tr>
@@ -134,6 +137,23 @@
 		</div>
 		
 	</section>
+
+	<div class="modal fade" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h2>Processing...</h2>
+      </div>
+      <div class="modal-body">
+      		<p>Sorry for the wait! We are using some advanced algorithms to process your data that sometimes takes a few minutes to run :)</p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	</div>
 
 	<footer>
 		<div class="container">
