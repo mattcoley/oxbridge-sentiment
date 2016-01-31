@@ -32,6 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/fonts/eleganticons/et-icons.css' %}">
 	<!-- Main style -->
 	<link rel="stylesheet" type="text/css" href="{% static 'sentiment/css/cardio.css' %}">
+
 </head>
 
 <body>
@@ -67,7 +68,7 @@
 				<div class="header-text">
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<h3 class="light white">Weekly Twitter Sentiment Trends</h3>
+							<h3 class="light white">Hourly Twitter Sentiment Comparisons</h3>
 							<h1 class="white typed">Click Below To Start Searching...</h1>
 							<span class="typed-cursor">|</span>
 						</div>
@@ -86,20 +87,68 @@
 		<div class="container" id="data_input">
 				<div class="row title text-center">
 					<div class="input-group" width="100%" id="test">
-							<input class="special_input" placeholder="cat">
+							<input class="special_input" placeholder="cats">
 							<span>  vs.  </span>
-							<input class="special_input" placeholder="dog">	
+							<input class="special_input" placeholder="dogs">	
 					</div>
 				</div>
-			<div class="row">
-				<canvas id="myChart" width="100%" height="400">
-					
-				</canvas>
+				<br>
+			<div class="row chart_holder">
+				<p class="title_chart">Sentiment Scores</p>
+				<canvas id="chart1" width="1000" height="400"></canvas>
+			</div>
+			<br>
+			<div class="row chart_holder">
+				<p class="title_chart">Positive vs. Negative</p>
+				<canvas id="chart2" width="500" height="400"></canvas>
+				<canvas id="chart3" width="500" height="400"></canvas>
+			</div>
+			<br>
+			<div class="row chart_holder">
+				<p class="title_chart">Best and Worst Tweet</p>
+				<table id="tweet_table">
+					<tr>
+						<td class="best_tweet t_left">
+							Cats are just the best creatures ever #IWANTONE
+							<p class="tweet_author a_left">-thecooldude</p>
+						</td>
+						<td class="best_tweet t_right">
+							@dogperson Ran by a cute dog today! #positivity
+							<p class="tweet_author a_right">-wonderwoman</p>
+						</td>
+					</tr>
+					<tr>
+						<td class="worst_tweet t_left">
+							@pd Cat just attacked my best friend :/
+							<p class="tweet_author a_left">-concernedcitizen</p>
+
+						</td>
+						<td class="worst_tweet t_right">
+							I wish all the dogs would literally DIE at this moment......
+							<p class="tweet_author a_right t_right">-evilmcphee</p>
+						</td>
+					</tr>
+				</table>
+
 			</div>
 		</div>
-
-					
+		
 	</section>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 text-center-mobile">
+					<h3 class="white">Created at HackCambridge</h3>
+				</div>
+				<div class="col-sm-6 text-center-mobile">
+					<h3 class="white">Other important shit</h3>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+
 
 	<!-- Holder for mobile navigation -->
 	<div class="mobile-nav">

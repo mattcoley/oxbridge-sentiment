@@ -19,3 +19,78 @@
 	width: 100%;
 	font-size: 30pt;
 }
+
+.ct-series-a .ct-bar {
+  /* Colour of your bars */
+  stroke: #d1dbf6 !important;
+  /* The width of your bars */
+  stroke-width: 100px;
+
+}
+
+.ct-series-b .ct-bar {
+  /* Colour of your bars */
+  stroke: #a2afd4 !important;
+  /* The width of your bars */
+  stroke-width: 100px;
+
+}
+
+.ct-grids line {
+  stroke: transparent !important;
+}
+
+.ct-labels span {
+  color: steelblue !important;
+  font-size: 12pt;
+}
+
+.chart_holder {
+	text-align: center;
+}
+
+.title_chart {
+	font-size: 35pt;
+	color: #FFFFFF;
+}
+
+.best_tweet {
+	width: 50%;
+	font-size: 18pt;
+}
+
+.worst_tweet {
+	width: 50%;
+	font-size: 18pt;
+}
+
+#tweet_table {
+	width: 100%;
+	text-align: center;
+}
+
+.tweet_author {
+
+}
+
+.t_left {
+    border-right: thick solid #FFFFFF;
+    text-align: left;
+}
+
+.t_right {
+	text-align: right;
+}
+
+.a_left {
+	padding-left: 5em;
+}
+.a_right {
+	padding-right: 5em;
+}
+
+#tweet_table td {
+	padding-bottom: 2em;
+}
+
+
