@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
         url(r'^$', views.index, name='index'),
-        url(r'^data$', views.data, name='data')
+        url(r'^update/name=(?P<name>[a-zA-Z]+)$',views.update,name='update')
 ]
