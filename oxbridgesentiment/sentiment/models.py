@@ -4,7 +4,7 @@ from django.db import models
 
 
 class TweetGroup(models.Model):
-    sentiment = models.DecimalField(max_digits=5, decimal_places=5)
+    sentiment = models.DecimalField(max_digits=5, decimal_places=5,default = 0.0)
     name = models.CharField(max_length=30)
     date_added = models.DateTimeField()
     positive = models.IntegerField(default = 0)

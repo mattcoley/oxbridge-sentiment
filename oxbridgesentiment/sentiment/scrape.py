@@ -23,7 +23,7 @@ def search(query):
     data['score'] = data['text'].map(lambda x : round (an.get_score(x),1))
     data = data[data['score'] != 0.00]
     data['sentiment'] = data['text'].map(an.get_sentiment)
-    data['retweet_count'] = data['retweet_count'].map(lambda x: x+1)
+    data['retweet_count'] = data['retweet_count'].map(lambda x: 1)
     return data
 
 def likeability(a):
