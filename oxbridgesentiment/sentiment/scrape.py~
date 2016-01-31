@@ -18,24 +18,19 @@ def get_tweets(query,number):
 
 def search(query):
     q = get_tweets(query,500)
-    if (q['statuses'] == []):
-        return pd.DataFrame()
     data = pd.DataFrame(q['statuses'])
     data = data.drop_duplicates('text')
-    data['score'] = data['text'].map(lambda x : an.get_score_lang(x))
+    data['score'] = data['text'].map(lambda x : an.get_score(x))
     data = data[data['score'] != 0.00]
     data['sentiment'] = data['text'].map(an.get_sentiment)
     data['retweet_count'] = data['retweet_count'].map(lambda x: cap(10,x+1))
     return data
 
 def likeability(a):
-
     d = search(a)
-    if d.empty:
-        return (0,0,0,"","",0.0)
     number_retweets = d['retweet_count'].sum()
     d['weightedsum'] = d['score'] * d['retweet_count'] / number_retweets
-    total_score = d['weightedsum'].sum() + 1
+    total_score = d['weightedsum'].sum()
     d = d.sort(['score'],ascending = False)
     d = d.reset_index()
     print d

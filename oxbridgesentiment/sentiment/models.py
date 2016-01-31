@@ -12,3 +12,4 @@ class TweetGroup(models.Model):
     neutral = models.IntegerField(default=0)
     best_text = models.CharField(max_length=500,default="")
     worst_text = models.CharField(max_length = 500,default="")
+    total_score = models.DecimalField(max_digits=25,decimal_places=5,default= 0.0)

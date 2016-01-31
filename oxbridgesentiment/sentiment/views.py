@@ -16,16 +16,18 @@ def update(request,name):
     entry = TweetGroup.objects.filter(name = name).aggregate(Max('date_added'))
     now = timezone.now()
     if entry['date_added__max'] == None or entry['date_added__max'] < (now - timedelta(minutes=5)):
-        (pos,neg,neu,m,l) = scrape.likeability(name)
+        (positive,negative,neutral,best_text,worst_text,total_score) = scrape.likeability(name)
         t = TweetGroup()
         t.name = name
-        t.positive = pos
-        t.negative = neg
-        t.neutral = neu
+        t.positive = positive
+        t.negative = negative
+        t.neutral = neutral
         t.date_added = now
-        t.best_text = m
-        t.worst_text = l
+        t.best_text = best_text
+        t.worst_text = worst_text
+        t.total_score = total_score
         t.save()
     t = TweetGroup.objects.filter(name = name).order_by('-date_added')[0]
-    return HttpResponse(json.dumps({'name':t.name,'positive':t.positive,'negative':t.negative,'neutral':t.neutral,'best-text':t.best_text,'worst-text':t.worst_text}))
+    return HttpResponse(json.dumps({'name':t.name,'positive':t.positive,'negative':t.negative,'neutral':t.neutral,'best-text':t.best_text,'worst-text':t.worst_text,'total-score':round(float(t.total_score),4)}))
+
 
