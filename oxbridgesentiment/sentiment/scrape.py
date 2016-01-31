@@ -2,7 +2,6 @@ import twitter
 import pandas as pd
 import urllib as ul
 import analyze as an
-import matplotlib.pyplot as plt
 #Variables that contains the user credentials to access Twitter API
 access_token = "4330021037-7JLVKH9XB5djXVwwy0NRb08YsvFek5b1PmTnz5Q"
 access_token_secret = "Rosr2YnGrJojHhewYwPAvxucMRqtLEptlsz90bHnmZE93"
