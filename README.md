@@ -1,2 +1,2 @@
 # oxbridge-sentiment
-Comparing tweet sentiments for UK's two best universities.
+Analyzing real-time tweets to compare current sentiments on anything you can imagine (as long as it's less than 50 chars :) )
