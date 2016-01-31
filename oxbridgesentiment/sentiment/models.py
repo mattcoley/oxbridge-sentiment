@@ -9,3 +9,6 @@ class TweetGroup(models.Model):
     date_added = models.DateTimeField()
     positive = models.IntegerField(default = 0)
     negative = models.IntegerField(default = 0)
+    neutral = models.IntegerField(default=0)
+    best_text = models.CharField(max_length=500,default="")
+    worst_text = models.CharField(max_length = 500,default="")

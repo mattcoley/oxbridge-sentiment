@@ -17,7 +17,7 @@ def get_tweets(query,number):
     return q
 
 def search(query):
-    q = get_tweets(query,50)
+    q = get_tweets(query,500)
     data = pd.DataFrame(q['statuses'])
     data = data.drop_duplicates('text')
     data['score'] = data['text'].map(lambda x : round (an.get_score(x),1))
@@ -28,11 +28,30 @@ def search(query):
 
 def likeability(a):
     d = search(a)
-    pos = d[d['sentiment'] == 'positive']
-    pos_count = pos['retweet_count'].sum();
-    neg = d[d['sentiment'] == 'negative']
-    neg_count = neg['retweet_count'].sum();
-    return (pos_count,neg_count)
+    d = d.sort(['score'],ascending = False)
+    d = d.reset_index()
+    print d
+    print type(d['text'])
+    most_liked = ""
+    least_liked = ""
+    try:
+        most_liked = d['text'][0]
+    except IndexError:
+        most_liked = ""
+    print most_liked
+
+    d = d.sort(['score'])
+    d = d.reset_index()
+    try:
+        least_liked = d['text'][0]
+    except IndexError:
+        least_liked = ""
+    print d
+    pos_count = len(d[d['sentiment'] == 'positive'].index)
+    neg_count = len(d[d['sentiment'] == 'negative'].index)
+    neu_count = len(d[d['sentiment'] == 'neutral'].index)
+    print(pos_count, neg_count, most_liked,least_liked)
+    return (pos_count,neg_count,neu_count,most_liked,least_liked)
 
 
 def cap(a,x):
@@ -45,6 +64,7 @@ def points(a):
     d = search(a)
     d = d.groupby(['score']).sum().reset_index()
     d['capped_retweet_count'] = d['retweet_count'].map(lambda x: cap(50,x))
-    return d[['score','capped_retweet_count']]
+    print d
+    return d[['score','capped_retweet_count']].reset_index()
 
 
