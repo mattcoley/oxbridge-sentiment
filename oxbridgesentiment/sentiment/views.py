@@ -15,7 +15,7 @@ def update(request,name):
 
     entry = TweetGroup.objects.filter(name = name).aggregate(Max('date_added'))
 
-    if entry['date_added__max'] == None or entry['date_added__max'] < (datetime.datetime.now() - timedelta(minutes=5)):
+    if entry['date_added__max'] == None or entry['date_added__max'] < (datetime.now() - timedelta(minutes=5)):
         (pos,neg) = scrape.likeability(name)
         t = TweetGroup()
         t.name = name
