@@ -33,8 +33,8 @@ def likeability(a):
     if d.empty:
         return (0,0,0,"","",0.0)
     number_retweets = d['retweet_count'].sum()
-    d['weightedsum'] = d['score'] * d['retweet_count'] / number_retweets
-    total_score = d['weightedsum'].sum() + 1
+    d['weightedsum'] = (d['score'] * d['retweet_count']) / number_retweets
+    total_score = d['weightedsum'].sum()
     d = d.sort(['score'],ascending = False)
     d = d.reset_index()
     print d
