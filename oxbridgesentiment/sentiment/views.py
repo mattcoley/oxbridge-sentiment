@@ -21,7 +21,7 @@ def update(request,name):
         t.name = name
         t.positive = pos
         t.negative = neg
-        t.date_added = datetime.datetime.now()
+        t.date_added = datetime.now()
         t.save()
         print (pos,neg)
 
